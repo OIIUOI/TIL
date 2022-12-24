@@ -263,6 +263,50 @@ public class Main {
 }
 ```
 
+```java
+import java.util.Scanner;
+ 
+public class Scanner2Demo {
+ 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNextInt()) {
+            System.out.println(sc.nextInt()*1000); 
+        }
+        sc.close();
+    }
+}
+```
+
+- `.hasNextInt()`
+  
+  - is int? or not? => return true or false
+
+- file input
+
+```java
+import java.util.Scanner;
+import java.io.*;
+ 
+public class Scanner3Demo {
+ 
+    public static void main(String[] args) {
+        try {
+            File file = new File("out.txt");
+            Scanner sc = new Scanner(file);
+            while(sc.hasNextInt()) {
+                System.out.println(sc.nextInt()*1000); 
+            }
+            sc.close();
+        } catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+         
+    }
+ 
+}
+```
+
 ---
 
 ## if Statement
@@ -399,6 +443,22 @@ do {
 } while (i < 10);
 ```
 
+
+
+### For-Each
+
+```java
+class InputForeachDemo{
+    public static void main(String[] args){
+        for(String e : args){
+            System.out.println(e);
+        }
+    }
+}
+```
+
+
+
 ### Break & Continue
 
 - `break`
@@ -428,3 +488,334 @@ do {
       System.out.println(i);
     }
     ```
+
+
+
+
+
+---
+
+## Method
+
+```java
+
+public class MethodDemo1 {
+// Method define
+    public static void numbering() {
+        int i = 0;
+        while (i < 10) {
+            System.out.println(i);
+            i++;
+        }
+    }
+
+// Method call
+    public static void main(String[] args) {
+        numbering();
+    }
+}
+```
+
+
+
+- Parameter & Argument
+
+```java
+public class MethodDemo4 {
+    public static void numbering(int limit) { // <- parameter
+        int i = 0;
+        while (i < limit) {
+            System.out.println(i);
+            i++;
+        }
+    }
+ 
+    public static void main(String[] args) { // <- argument
+        numbering(5);
+    }
+}
+```
+
+- More than two Parameter
+
+```java
+public class MethodDemo5 {
+ 
+    public static void numbering(int init, int limit) {
+        int i = init;
+        while (i < limit) {
+            System.out.println(i);
+            i++;
+        }
+    }
+ 
+    public static void main(String[] args) {
+        numbering(1, 5);
+    }
+ 
+}
+```
+
+- return 
+  
+  - void => no return
+
+```java
+public class MethodDemo6 {
+    public static String numbering(int init, int limit) {
+        int i = init;
+        String output = "";
+        while (i < limit) {
+            output += i;
+            i++;
+        }.
+        return output;
+    }
+ 
+    public static void main(String[] args) {
+        // 메소드 numbering이 리턴한 값이 변수 result에 담긴다.
+        String result = numbering(1, 5);
+        // 변수 result의 값을 화면에 출력한다.
+        System.out.println(result);
+    }
+}
+```
+
+- More than two Return
+
+```java
+public class ReturnDemo4 {
+ 
+    public static String[] getMembers() {
+        String[] members = { "최진혁", "최유빈", "한이람" };
+        return members;
+    }
+ 
+    public static void main(String[] args) {
+        String[] members = getMembers();
+    }
+ 
+}
+```
+
+---
+
+## Class
+
+- method define
+  
+  ```java
+  public class CalculatorDemo2 {
+      // method define
+      public static void sum(int left, int right) {
+          System.out.println(left + right);
+      }
+   
+      // main 
+      public static void main(String[] args) {
+          sum(10, 20);
+          sum(20, 40);
+      }
+   
+  }
+  ```
+
+- class define & use class in main
+  
+  ```java
+  class Calculator{
+      int left, right;
+  
+      public void setOprands(int left, int right){
+          this.left = left;
+          this.right = right;
+      }
+  
+      public void sum(){
+          System.out.println(this.left+this.right);
+      }
+  
+      public void avg(){
+          System.out.println((this.left+this.right)/2);
+      }
+  }
+  
+  public class CalculatorDemo4 {
+  
+      public static void main(String[] args) {
+  
+          Calculator c1 = new Calculator();
+          c1.setOprands(10, 20);
+          c1.sum();       
+          c1.avg();       
+  
+          Calculator c2 = new Calculator();
+          c2.setOprands(20, 40);
+          c2.sum();       
+          c2.avg();
+      }
+  }
+  ```
+  
+  - if you want to use class, we can't use class direct, 
+    
+    `new` is method make class to instant
+    
+    and variable's type is instant's class, cause we make datatype by class
+  
+  - `this.left = left;``this.right = right`
+    
+    you can write like this
+    
+    ```java
+    class Calculator {
+    
+      public void sum(int left, int right) {
+        System.out.println(left + right);
+      }
+    
+      public void avg(int left, int right) {
+        System.out.println((left + right) / 2);
+      }
+    }
+    
+    public class prac {
+    
+      public static void main(String[] args) {
+    
+        Calculator c1 = new Calculator();
+        c1.sum(10, 20);
+        c1.avg(10, 20);
+    
+        Calculator c2 = new Calculator();
+        c2.sum(10, 20);
+        c2.avg(10, 20);
+      }
+    }
+    ```
+    
+    I don't know why do like this setting the value meaning 
+    
+    but I guess that is instant
+    
+    and prevent overlapping code, maybe?
+    
+    **OOP's mean** 
+    
+    > programing pradime
+    > 
+    > Create logic by object maden state(variable) and behave(method)
+    
+    yeap my guess is right
+
+---
+
+## Class member and Instant member
+
+Member is variable included class and method
+
+Instant member's meaning is having different values for each instant
+
+Class member's meaning is having same value every instant
+
+```java
+class Calculator{
+    static double PI = 3.14;
+    int left, right;
+
+    public void setOprands(int left, int right){
+        this.left = left;
+        this.right = right;
+    }
+
+    public void sum(){
+        System.out.println(this.left+this.right);
+    }
+
+    public void avg(){
+        System.out.println((this.left+this.right)/2);
+    }
+}
+
+```
+
+static is fixed (we can use `final`)
+
+`PI` is class member, every instant have same value
+
+`left`, `right` is instant member can be change
+
+If you have class member, you can access to value by class, not instant
+
+```java
+Calculator c2 = new Calculator();
+System.out.println(c2.PI);
+ 
+System.out.println(Calculator.PI);
+ 
+```
+
+and it can do like this
+
+```java
+class Calculator2 {
+    static double PI = 3.14;
+    // 클래스 변수인 base가 추가되었다.
+    static int base = 0;
+    int left, right;
+ 
+    public void setOprands(int left, int right) {
+        this.left = left;
+        this.right = right;
+    }
+ 
+    public void sum() {
+        // 더하기에 base의 값을 포함시킨다.
+        System.out.println(this.left + this.right + base);
+    }
+ 
+    public void avg() {
+        // 평균치에 base의 값을 포함시킨다.
+        System.out.println((this.left + this.right + base) / 2);
+    }
+}
+ 
+public class CalculatorDemo2 {
+ 
+    public static void main(String[] args) {
+ 
+        Calculator2 c1 = new Calculator2();
+        c1.setOprands(10, 20);
+        // 30 출력
+        c1.sum();
+ 
+        Calculator2 c2 = new Calculator2();
+        c2.setOprands(20, 40);
+        // 60 출력
+        c2.sum();
+ 
+        // 클래스 변수 base의 값을 10으로 지정했다.
+        Calculator2.base = 10;
+ 
+        // 40 출력
+        c1.sum();
+ 
+        // 70 출력
+        c2.sum();
+    }
+}
+```
+
+- Reason of Class Member
+  
+  - case of fixed value regardless of instant
+  
+  - case of accessing value by class directly
+  
+  - case of sharing value's change every instant
+
+
+
+---
+
+## Class method
