@@ -108,9 +108,9 @@ public class DefineDemo {
 
 ```java
 package org.opentutorials.javatutorials.array;
- 
+
 public class LengthDemo {
- 
+
     public static void main(String[] args) {
         String[] classGroup = new String[4];
         classGroup[0] = "최진혁";
@@ -121,9 +121,9 @@ public class LengthDemo {
         System.out.println(classGroup.length);
         classGroup[3] = "이고잉";
         System.out.println(classGroup.length);
- 
+
     }
- 
+
 }
 ```
 
@@ -265,9 +265,9 @@ public class Main {
 
 ```java
 import java.util.Scanner;
- 
+
 public class Scanner2Demo {
- 
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while(sc.hasNextInt()) {
@@ -287,9 +287,9 @@ public class Scanner2Demo {
 ```java
 import java.util.Scanner;
 import java.io.*;
- 
+
 public class Scanner3Demo {
- 
+
     public static void main(String[] args) {
         try {
             File file = new File("out.txt");
@@ -301,9 +301,9 @@ public class Scanner3Demo {
         } catch(FileNotFoundException e){
             e.printStackTrace();
         }
-         
+
     }
- 
+
 }
 ```
 
@@ -443,8 +443,6 @@ do {
 } while (i < 10);
 ```
 
-
-
 ### For-Each
 
 ```java
@@ -456,8 +454,6 @@ class InputForeachDemo{
     }
 }
 ```
-
-
 
 ### Break & Continue
 
@@ -489,16 +485,11 @@ class InputForeachDemo{
     }
     ```
 
-
-
-
-
 ---
 
 ## Method
 
 ```java
-
 public class MethodDemo1 {
 // Method define
     public static void numbering() {
@@ -516,8 +507,6 @@ public class MethodDemo1 {
 }
 ```
 
-
-
 - Parameter & Argument
 
 ```java
@@ -529,7 +518,7 @@ public class MethodDemo4 {
             i++;
         }
     }
- 
+
     public static void main(String[] args) { // <- argument
         numbering(5);
     }
@@ -540,7 +529,7 @@ public class MethodDemo4 {
 
 ```java
 public class MethodDemo5 {
- 
+
     public static void numbering(int init, int limit) {
         int i = init;
         while (i < limit) {
@@ -548,11 +537,11 @@ public class MethodDemo5 {
             i++;
         }
     }
- 
+
     public static void main(String[] args) {
         numbering(1, 5);
     }
- 
+
 }
 ```
 
@@ -571,7 +560,7 @@ public class MethodDemo6 {
         }.
         return output;
     }
- 
+
     public static void main(String[] args) {
         // 메소드 numbering이 리턴한 값이 변수 result에 담긴다.
         String result = numbering(1, 5);
@@ -585,16 +574,16 @@ public class MethodDemo6 {
 
 ```java
 public class ReturnDemo4 {
- 
+
     public static String[] getMembers() {
         String[] members = { "최진혁", "최유빈", "한이람" };
         return members;
     }
- 
+
     public static void main(String[] args) {
         String[] members = getMembers();
     }
- 
+
 }
 ```
 
@@ -610,13 +599,13 @@ public class ReturnDemo4 {
       public static void sum(int left, int right) {
           System.out.println(left + right);
       }
-   
+  
       // main 
       public static void main(String[] args) {
           sum(10, 20);
           sum(20, 40);
       }
-   
+  
   }
   ```
 
@@ -698,15 +687,15 @@ public class ReturnDemo4 {
     
     but I guess that is instant
     
-    and prevent overlapping code, maybe?
+    and prevent overlapping code, maybe? 
+    
+    **NOPE, instant method**
     
     **OOP's mean** 
     
     > programing pradime
     > 
     > Create logic by object maden state(variable) and behave(method)
-    
-    yeap my guess is right
 
 ---
 
@@ -736,7 +725,6 @@ class Calculator{
         System.out.println((this.left+this.right)/2);
     }
 }
-
 ```
 
 static is fixed (we can use `final`)
@@ -750,9 +738,8 @@ If you have class member, you can access to value by class, not instant
 ```java
 Calculator c2 = new Calculator();
 System.out.println(c2.PI);
- 
+
 System.out.println(Calculator.PI);
- 
 ```
 
 and it can do like this
@@ -763,43 +750,43 @@ class Calculator2 {
     // 클래스 변수인 base가 추가되었다.
     static int base = 0;
     int left, right;
- 
+
     public void setOprands(int left, int right) {
         this.left = left;
         this.right = right;
     }
- 
+
     public void sum() {
         // 더하기에 base의 값을 포함시킨다.
         System.out.println(this.left + this.right + base);
     }
- 
+
     public void avg() {
         // 평균치에 base의 값을 포함시킨다.
         System.out.println((this.left + this.right + base) / 2);
     }
 }
- 
+
 public class CalculatorDemo2 {
- 
+
     public static void main(String[] args) {
- 
+
         Calculator2 c1 = new Calculator2();
         c1.setOprands(10, 20);
         // 30 출력
         c1.sum();
- 
+
         Calculator2 c2 = new Calculator2();
         c2.setOprands(20, 40);
         // 60 출력
         c2.sum();
- 
+
         // 클래스 변수 base의 값을 10으로 지정했다.
         Calculator2.base = 10;
- 
+
         // 40 출력
         c1.sum();
- 
+
         // 70 출력
         c2.sum();
     }
@@ -814,8 +801,96 @@ public class CalculatorDemo2 {
   
   - case of sharing value's change every instant
 
-
-
 ---
 
 ## Class method
+
+if you don't need to have instant member, and you want to use method
+
+don't make instant, just use method with accessing class directly
+
+you can see `static`, it's mean of **Class method**
+
+```java
+class Calculator3{
+
+    public static void sum(int left, int right){
+        System.out.println(left+right);
+    }
+
+    public static void avg(int left, int right){
+        System.out.println((left+right)/2);
+    }
+}
+
+public class CalculatorDemo3 {
+
+    public static void main(String[] args) {
+        Calculator3.sum(10, 20);
+        Calculator3.avg(10, 20);
+
+        Calculator3.sum(20, 40);
+        Calculator3.avg(20, 40);
+    }
+}
+```
+
+---
+
+## Relationship of Instant member & Class member
+
+- Instant member = Non-Static Field
+
+- Class member = Satic Field
+
+```java
+class C1{
+    static int static_variable = 1;
+    int instance_variable = 2;
+    static void static_static(){
+        System.out.println(static_variable);
+    }
+    static void static_instance(){
+        // 클래스 메소드에서는 인스턴스 변수에 접근 할 수 없다. 
+        //System.out.println(instance_variable);
+    }
+    void instance_static(){
+        // 인스턴스 메소드에서는 클래스 변수에 접근 할 수 있다.
+        System.out.println(static_variable);
+    }
+    void instance_instance(){        
+        System.out.println(instance_variable);
+    }
+}
+public class ClassMemberDemo {  
+    public static void main(String[] args) {
+        C1 c = new C1();
+        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
+        // 인스턴스 메소드가 정적 변수에 접근 -> 성공
+        c.static_static();
+        // 인스턴스를 이용해서 정적 메소드에 접근 -> 성공
+        // 정적 메소드가 인스턴스 변수에 접근 -> 실패
+        c.static_instance();
+        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공
+        // 인스턴스 메소드가 클래스 변수에 접근 -> 성공
+        c.instance_static();
+        // 인스턴스를 이용해서 인스턴스 메소드에 접근 -> 성공 
+        // 인스턴스 메소드가 인스턴스 변수에 접근 -> 성공
+        c.instance_instance();
+        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
+        // 클래스 메소드가 클래스 변수에 접근 -> 성공
+        C1.static_static();
+        // 클래스를 이용해서 클래스 메소드에 접근 -> 성공
+        // 클래스 메소드가 인스턴스 변수에 접근 -> 실패
+        C1.static_instance();
+        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
+        //C1.instance_static();
+        // 클래스를 이용해서 인스턴스 메소드에 접근 -> 실패
+        //C1.instance_instance();
+    }
+}
+```
+
+---
+
+## Scope
