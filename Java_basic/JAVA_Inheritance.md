@@ -4,7 +4,7 @@
 
 ## Inheritance
 
-parent's class is super class or base class, child class is sub class or derived class
+parent class called super class or base class, child class called sub class or derived class
 
 ```java
 class Calculator {

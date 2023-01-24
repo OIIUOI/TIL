@@ -1,10 +1,10 @@
 # JAVA
 
----
-
-## Inheritance & Constructor
+## Overriding
 
 ```java
+package org.opentutorials.javatutorials.overriding.example1;
+
 class Calculator {
     int left, right;
 
@@ -22,11 +22,10 @@ class Calculator {
     }
 }
 
-
 class SubstractionableCalculator extends Calculator {
-    public SubstractionableCalculator(int left, int right) {
-        this.left = left;
-        this.right = right;
+
+    public void sum() {
+        System.out.println("실행 결과는 " +(this.left + this.right)+"입니다.");
     }
 
     public void substract() {
@@ -34,9 +33,10 @@ class SubstractionableCalculator extends Calculator {
     }
 }
 
-public class CalculatorConstructorDemo4 {
+public class CalculatorDemo {
     public static void main(String[] args) {
-        SubstractionableCalculator c1 = new SubstractionableCalculator(10, 20);
+        SubstractionableCalculator c1 = new SubstractionableCalculator();
+        c1.setOprands(10, 20);
         c1.sum();
         c1.avg();
         c1.substract();
