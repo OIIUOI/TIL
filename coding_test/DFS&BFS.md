@@ -36,10 +36,6 @@ def dfs(start):
                 stack.append(adj)
 ```
 
-
-
-
-
 # BFS
 
 ## Code
@@ -58,7 +54,7 @@ def bfs(start):
 
     while queue:
         cur = queue.popleft()
-        
+
         for adj in graph[cur]:
             if not visited[adj]:
                 queue.append(adj)
