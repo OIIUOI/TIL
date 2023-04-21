@@ -166,3 +166,15 @@ variable이 "codeit" 일 때 {{ variable|ljust:"10" }} 이라면 "codeit "이 �
 # 사용자 정의 필터와 태그
 
 사용자 정의 템플릿 필터와 템플릿 태그를 사용하는 방법은 Django의 문법에 익숙해진 후에 별도의 레슨에서 다루도록 하겠습니다. 지금은 기본적인 템플릿 언어에 익숙해지는 것이 중요합니다. 만약 먼저 알고 싶다면 아래의 공식 문서를 참고하세요. [Custom template tags and filters | Django documentation | Django](https://docs.djangoproject.com/en/2.2/howto/custom-template-tags/)
+
+## slice
+
+![](assets/2023-04-21-01-18-01-image.png)
+
+you can see only 100 word
+
+## linebreaksbr
+
+![](assets/2023-04-21-01-19-35-image.png)
+
+if it doesn't work /n(=enter), should use it
