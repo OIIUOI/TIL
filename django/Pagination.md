@@ -36,8 +36,6 @@ page.next_page_number()
 # out : 2
 ```
 
-
-
 ## 1. Paginator in Views
 
 ```python
@@ -56,8 +54,6 @@ def post_list(req):
     return render(req, posts/post_list.html, {'page' : page})
 ```
 
-
-
 ## 2. Paginator in Template
 
 before
@@ -68,17 +64,21 @@ before
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-21-19-56-02-image.png)
 
-
-
 ```python
 {% if post %}
    =>
 {% if page.object_list %}
 ```
 
+---
+
+### object_list
+
 ![](assets/2023-04-21-20-20-09-image.png)
 
 ![](assets/2023-04-21-20-20-27-image.png)
+
+---
 
 ![](assets/2023-04-21-20-21-47-image.png)
 
@@ -149,8 +149,6 @@ before
 
 ![](assets/2023-04-21-20-38-32-image.png)
 
-
-
 ```python
 <div class="paginator">
     {% if page.has_previous %}
@@ -163,9 +161,71 @@ before
         <div>
             <p>{{ page.number}} of {{ page.paginator.num_pages}}</p>
         </div>
-        
+        #############################
     {% endif %}
 </div>
 ```
 
 ![](assets/2023-04-21-20-45-12-image.png)
+
+![](assets/2023-04-22-02-45-47-image.png)
+
+![](assets/2023-04-22-02-46-06-image.png)
+
+![](assets/2023-04-22-02-46-29-image.png)
+
+![](assets/2023-04-22-02-46-53-image.png)
+
+![](assets/2023-04-22-02-47-12-image.png)
+
+```python
+<div class="paginator">
+    {% if page.has_previous %}
+        <a href="?page=1"
+        class="first">first</a>
+        <a href="?page={{ page.previous_page_number}}"
+        class="prev">prev</a>
+
+        <div>
+            <p>{{ page.number}} of {{ page.paginator.num_pages}}</p>
+        </div>
+
+        #############################
+        {% if page.has_next %}
+            <a href="?page={{page.next_page_number}}"
+            class="next">next</a>
+        #############################
+    {% endif %}
+</div>
+```
+
+![](assets/2023-04-22-03-17-01-image.png)
+
+![](assets/2023-04-22-03-17-29-image.png)
+
+```python
+<div class="paginator">
+    {% if page.has_previous %}
+        <a href="?page=1"
+        class="first">first</a>
+        <a href="?page={{ page.previous_page_number}}"
+        class="prev">prev</a>
+
+        <div>
+            <p>{{ page.number}} of {{ page.paginator.num_pages}}</p>
+        </div>
+
+        {% if page.has_next %}
+            <a href="?page={{page.next_page_number}}"
+            class="next">next</a>
+        #############################
+            <a href="?page={{page.paginator.num_pages}}"
+            class="last">last</a>
+        #############################
+    {% endif %}
+</div>
+```
+
+```
+
+```
