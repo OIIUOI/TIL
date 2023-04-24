@@ -362,13 +362,9 @@ class PostDeleteView(DeleteView):
 
 ![](assets/2023-04-23-21-39-21-image.png)
 
-
-
 ---
 
 ## Make simple GenericView
-
-
 
 ### Simple ListView
 
@@ -440,13 +436,9 @@ class PostDeleteView(DeleteView):
 
 ![](assets/2023-04-23-22-51-57-image.png)
 
-
-
 | object_list                               |
 | ----------------------------------------- |
 | ![](assets/2023-04-23-23-02-26-image.png) |
-
-
 
 ![](assets/2023-04-23-23-03-26-image.png)
 
@@ -464,10 +456,170 @@ class PostDeleteView(DeleteView):
 
 ---
 
-
-
-
-
 ### Simple DetailView
 
 ![](assets/2023-04-23-23-12-03-image.png)
+
+
+
+**template_name**
+
+![](assets/2023-04-24-01-42-52-image.png)
+
+
+
+**pk_url_kwarg**
+
+![](assets/2023-04-24-01-45-30-image.png)<img title="" src="assets/2023-04-24-01-50-56-image.png" alt="" width="153">
+
+![](assets/2023-04-24-01-46-06-image.png)
+
+![](assets/2023-04-24-01-52-23-image.png)
+
+
+
+**context_object_name**
+
+![](assets/2023-04-24-01-54-49-image.png)
+
+![](assets/2023-04-24-01-55-09-image.png)
+
+![](assets/2023-04-24-01-55-36-image.png)
+
+![](assets/2023-04-24-01-56-03-image.png)
+
+![](assets/2023-04-24-01-56-25-image.png)
+
+---
+
+### CreateView
+
+![](assets/2023-04-24-01-57-37-image.png)
+
+**model**
+
+It doesn't have default value
+
+**form_class** 
+
+It doesn't have default value
+
+<img title="" src="assets/2023-04-24-01-58-51-image.png" alt="" width="287"><img title="" src="assets/2023-04-24-01-59-41-image.png" alt="" width="315">
+
+
+
+**template_name**
+
+![](assets/2023-04-24-02-01-14-image.png)
+
+![](assets/2023-04-24-02-01-57-image.png)
+
+<img title="" src="assets/2023-04-24-02-02-29-image.png" alt="" width="164"><img title="" src="assets/2023-04-24-02-03-06-image.png" alt="" width="403">
+
+
+
+**get_success_url**
+
+![](assets/2023-04-24-02-04-40-image.png)
+
+![](assets/2023-04-24-02-05-22-image.png)
+
+![](assets/2023-04-24-02-05-53-image.png)
+
+![](assets/2023-04-24-02-06-27-image.png)
+
+---
+
+### UpdateView
+
+![](assets/2023-04-24-02-07-38-image.png)
+
+
+
+**form_class**
+
+it doesn't have default value
+
+![](assets/2023-04-24-02-09-44-image.png)
+
+<img title="" src="assets/2023-04-24-02-10-42-image.png" alt="" width="267"><img title="" src="assets/2023-04-24-02-11-09-image.png" alt="" width="314">
+
+
+
+**template_name**
+
+![](assets/2023-04-24-02-13-25-image.png)
+
+
+
+**pk_url_kwarg**
+
+![](assets/2023-04-24-02-14-06-image.png)
+
+![](assets/2023-04-24-02-16-42-image.png)
+
+
+
+**get_success_url**
+
+![](assets/2023-04-24-02-17-57-image.png)
+
+![](assets/2023-04-24-02-18-20-image.png)
+
+---
+
+
+
+### DeleteView
+
+![](assets/2023-04-24-02-19-13-image.png)
+
+
+
+**template_name**
+
+![](assets/2023-04-24-02-20-05-image.png)
+
+
+
+**pk_url_kwarg**
+
+default = pk
+
+![](assets/2023-04-24-02-21-16-image.png)
+
+![](assets/2023-04-24-02-21-39-image.png)
+
+
+
+**context_object_name**
+
+![](assets/2023-04-24-02-23-15-image.png)
+
+![](assets/2023-04-24-02-23-27-image.png)
+
+![](assets/2023-04-24-02-23-44-image.png)
+
+![](assets/2023-04-24-02-24-00-image.png)
+
+![](assets/2023-04-24-02-24-26-image.png)
+
+![](assets/2023-04-24-02-24-42-image.png)
+
+![](assets/2023-04-24-02-24-58-image.png)
+
+![](assets/2023-04-24-02-25-19-image.png)
+
+![](assets/2023-04-24-02-25-35-image.png)
+
+![](assets/2023-04-24-02-26-28-image.png)
+
+---
+
+
+
+## RedirectView
+
+![](assets/2023-04-24-02-30-00-image.png)
+
+![](assets/2023-04-24-02-31-12-image.png)
