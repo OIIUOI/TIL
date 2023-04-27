@@ -1,7 +1,5 @@
 # Data Modeling
 
-
-
 유저 모델을 유저 모델과 프로필 모델로 나누는 방법을 알려드릴게요. 데이터를 잃지 않으려면 데이터 마이그레이션을 활용해야 하는데요. 과정을 정리하자면 아래와 같습니다.
 
 ![](https://bakey-api.codeit.kr/api/files/resource?root=static&seqId=5222&directory=Untitled.png&name=Untitled.png)
@@ -314,8 +312,6 @@ python manage.py shell
 
 이제 마이그레이션 7, 8, 9번은 사용하지 않으니까 마이그레이션 파일들(`0007_profile.py`, `0008_migrate_profile_data.py`, `0009_delete_user_profile_fields.py`)을 지워주시면 됩니다.
 
-
-
 ## 일대다 관계 (1:N)
 
 ```python
@@ -446,8 +442,6 @@ class Like(models.Model):
     liked_object = GenericForeignKey()
 ```
 
-
-
 ## Meta Option
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-25-18-18-01-image.png)
@@ -481,8 +475,6 @@ class Review(models.Model):
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-25-18-24-23-image.png)
 
-
-
 # ModelAdmin
 
 **admin.py**
@@ -495,8 +487,6 @@ class Review(models.Model):
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-25-18-33-28-image.png)
 
-
-
 ## Inline
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-25-18-34-01-image.png)
@@ -508,3 +498,31 @@ class Review(models.Model):
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-25-18-34-59-image.png)
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-25-18-35-19-image.png)
+
+![](assets/2023-04-26-21-19-04-image.png) **But in admin page**
+
+![](assets/2023-04-26-21-19-55-image.png)
+
+![](assets/2023-04-26-21-20-12-image.png)
+
+<img title="" src="assets/2023-04-26-21-20-41-image.png" alt="" width="351"><img title="" src="assets/2023-04-26-21-20-56-image.png" alt="" width="261">
+
+![](assets/2023-04-26-21-21-22-image.png)
+
+![](assets/2023-04-26-21-21-44-image.png)
+
+![](assets/2023-04-26-21-22-37-image.png)
+
+![](assets/2023-04-26-21-22-54-image.png)
+
+![](assets/2023-04-26-21-23-17-image.png)
+
+```python
+# admin.py
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from .models import User, Review, Comment, Like
+
+class CommentInline(admin.StackedInline):
+    model = Comment
+```

@@ -94,11 +94,7 @@ example >>
 
 ![](assets/2023-04-21-02-53-49-image.png)
 
-
-
 # 유효성 검증을 뒤늦게 추가했다면?
-
-
 
 ![](assets/2023-04-21-05-32-01-image.png)
 
@@ -129,8 +125,6 @@ def validate_post():
         model.save()
         # dt_modified will be present
 ```
-
-
 
 In **terminal**
 

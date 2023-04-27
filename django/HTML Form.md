@@ -2,8 +2,6 @@
 
 폼은 웹 페이지에서 사용자의 데이터를 입력받을 수 있는 입력 양식을 말합니다. 아래에서 배우는 여러 Form 요소들은 Django에서 제공하는 폼을 사용하면 저절로 생성되지만 기본적인 HTML 폼을 알고 있으면 Django의 폼을 이해하는데 많은 도움이 됩니다.
 
-
-
 ## Seperate Form
 
 ![](assets/2023-04-21-03-23-30-image.png)
@@ -22,8 +20,6 @@
 
 ![](assets/2023-04-21-03-28-14-image.png)
 
-
-
 ## Widget custom
 
 if you use normal form
@@ -33,16 +29,6 @@ if you use normal form
 ![](assets/2023-04-21-04-00-46-image.png)
 
 기본 위젯은 필드마다 다르다
-
-
-
-
-
-
-
-
-
-
 
 ## label과 input
 
