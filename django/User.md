@@ -169,8 +169,6 @@ UserAdmin.fieldsets += ("Custom fields", {"fields" : ("nickname",)})
 
 ---
 
-
-
 # Signup Form Custom
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-12-59-13-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-13-00-14-image.png)
@@ -183,8 +181,6 @@ UserAdmin.fieldsets += ("Custom fields", {"fields" : ("nickname",)})
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-13-11-44-image.png)
 
-
-
 <img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-14-46-46-image.png" title="" alt="" width="355"><img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-14-47-01-image.png" title="" alt="" width="254">
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-14-47-36-image.png)
@@ -193,21 +189,15 @@ UserAdmin.fieldsets += ("Custom fields", {"fields" : ("nickname",)})
 
 ---
 
-
-
 # Velidation
 
 **setting.py**            <img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-14-55-20-image.png" title="" alt="" width="172">![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-14-56-21-image.png)
-
-
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-14-59-25-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-14-58-27-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-14-58-53-image.png)
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-00-00-image.png)<img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-15-00-13-image.png" title="" alt="" width="431">
 
 ---
-
-
 
 ## Password velidator
 
@@ -216,8 +206,6 @@ UserAdmin.fieldsets += ("Custom fields", {"fields" : ("nickname",)})
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-03-25-image.png)
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-03-57-image.png)
-
-
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-06-15-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-06-33-image.png)
 
@@ -261,8 +249,6 @@ def contains_number(value):
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-40-26-image.png)
 
-
-
 ## 1. ACCOUNT_EMAIL_VERIFICATION
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-41-43-image.png)
@@ -274,8 +260,6 @@ def contains_number(value):
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-43-30-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-43-48-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-44-02-image.png)
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-15-46-06-image.png)<img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-15-46-26-image.png" title="" alt="" width="236">
-
-
 
 Sign up and
 
@@ -289,8 +273,6 @@ Sign up and
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-16-00-24-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-16-00-40-image.png)
 
-
-
 <img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-16-06-02-image.png" title="" alt="" width="668">
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-16-02-40-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-16-02-55-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-16-04-35-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-16-04-50-image.png)
@@ -299,6 +281,25 @@ Sign up and
 
 # Password
 
-![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-16-24-10-image.png)<img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-20-00-07-image.png" title="" alt="" width="371">![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-00-54-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-01-39-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-02-00-image.png)<img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-20-02-16-image.png" title="" alt="" width="455"><img title="" src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-20-02-31-image.png" alt="" width="147">![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-02-58-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-03-18-image.png)<img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-20-03-53-image.png" title="" alt="" width="561">
+![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-16-24-10-image.png)![](assets/2023-04-27-22-17-09-image.png)<img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-20-00-07-image.png" title="" alt="" width="371">![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-00-54-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-01-39-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-02-00-image.png)<img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-20-02-16-image.png" title="" alt="" width="455"><img title="" src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-20-02-31-image.png" alt="" width="147">![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-02-58-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-27-20-03-18-image.png)<img src="file:///C:/Users/jin47/AppData/Roaming/marktext/images/2023-04-27-20-03-53-image.png" title="" alt="" width="561">
+
+![](assets/2023-04-27-22-20-23-image.png)![](assets/2023-04-27-22-21-52-image.png)![](assets/2023-04-27-22-22-08-image.png)![](assets/2023-04-27-22-22-25-image.png)<img src="assets/2023-04-27-22-23-02-image.png" title="" alt="" width="663">![](assets/2023-04-27-22-25-22-image.png)![](assets/2023-04-27-22-25-35-image.png)![](assets/2023-04-27-22-26-09-image.png)![](assets/2023-04-27-22-26-25-image.png)
+
+![](assets/2023-04-27-22-27-54-image.png)![](assets/2023-04-29-00-44-31-image.png)![](assets/2023-04-29-00-44-52-image.png)![](assets/2023-04-29-00-45-06-image.png)![](assets/2023-04-29-00-45-33-image.png)![](assets/2023-04-29-00-47-38-image.png)![](assets/2023-04-29-00-48-00-image.png)![](assets/2023-04-29-00-48-25-image.png)
+
+```python
+# views.py
+from allauth,account.views import PasswordChangeView
+from django.urls import reverse
+
+class CustomPasswordChangeView(PasswordChangeView):
+    def get_success_url(self):
+        return reverse("index")
+        
+```
+
+![](assets/2023-04-29-00-49-26-image.png)![](assets/2023-04-29-00-49-41-image.png)![](assets/2023-04-29-00-49-56-image.png)![](assets/2023-04-29-00-50-13-image.png)![](assets/2023-04-29-00-50-26-image.png)
 
 
+
+![](assets/2023-04-29-00-50-50-image.png)![](assets/2023-04-29-00-51-02-image.png)
