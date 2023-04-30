@@ -2,8 +2,6 @@
 
 [django.contrib.humanize | Django documentation | Django](https://docs.djangoproject.com/en/3.2/ref/contrib/humanize/)
 
-
-
 ```python
 # setting.py
 
@@ -18,5 +16,3 @@ INSTALLED_APPS = [
 
 {{price | intcomma}}
 ```
-
-

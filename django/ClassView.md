@@ -262,11 +262,11 @@ class PostDeleteView(DeleteView):
         return reverse('post-list')
 ```
 
-![](assets/2023-04-23-20-17-54-image.png)
+![](C:\Users\jin47\OneDrive\바탕%20화면\TIL\django\Classview\assets\2023-04-23-19-23-19-image.png)
 
-![](assets/2023-04-23-20-18-19-image.png)
+![](C:\Users\jin47\OneDrive\바탕%20화면\TIL\django\Classview\assets\2023-04-23-20-18-19-image.png)
 
-![](assets/2023-04-23-20-18-37-image.png)
+![](C:\Users\jin47\OneDrive\바탕%20화면\TIL\django\Classview\assets\2023-04-23-20-18-37-image.png)
 
 ![](assets/2023-04-23-20-19-01-image.png)
 
@@ -310,7 +310,7 @@ class PostDeleteView(DeleteView):
 
 ![](assets/2023-04-23-21-19-44-image.png)
 
-![](assets/2023-04-23-21-20-02-image.png)
+![](C:\Users\jin47\OneDrive\바탕%20화면\TIL\django\assets\2023-04-23-21-20-02-image.png)
 
 ![](assets/2023-04-23-21-23-49-image.png)
 
@@ -460,13 +460,9 @@ class PostDeleteView(DeleteView):
 
 ![](assets/2023-04-23-23-12-03-image.png)
 
-
-
 **template_name**
 
 ![](assets/2023-04-24-01-42-52-image.png)
-
-
 
 **pk_url_kwarg**
 
@@ -475,8 +471,6 @@ class PostDeleteView(DeleteView):
 ![](assets/2023-04-24-01-46-06-image.png)
 
 ![](assets/2023-04-24-01-52-23-image.png)
-
-
 
 **context_object_name**
 
@@ -506,8 +500,6 @@ It doesn't have default value
 
 <img title="" src="assets/2023-04-24-01-58-51-image.png" alt="" width="287"><img title="" src="assets/2023-04-24-01-59-41-image.png" alt="" width="315">
 
-
-
 **template_name**
 
 ![](assets/2023-04-24-02-01-14-image.png)
@@ -515,8 +507,6 @@ It doesn't have default value
 ![](assets/2023-04-24-02-01-57-image.png)
 
 <img title="" src="assets/2023-04-24-02-02-29-image.png" alt="" width="164"><img title="" src="assets/2023-04-24-02-03-06-image.png" alt="" width="403">
-
-
 
 **get_success_url**
 
@@ -534,8 +524,6 @@ It doesn't have default value
 
 ![](assets/2023-04-24-02-07-38-image.png)
 
-
-
 **form_class**
 
 it doesn't have default value
@@ -544,21 +532,15 @@ it doesn't have default value
 
 <img title="" src="assets/2023-04-24-02-10-42-image.png" alt="" width="267"><img title="" src="assets/2023-04-24-02-11-09-image.png" alt="" width="314">
 
-
-
 **template_name**
 
 ![](assets/2023-04-24-02-13-25-image.png)
-
-
 
 **pk_url_kwarg**
 
 ![](assets/2023-04-24-02-14-06-image.png)
 
 ![](assets/2023-04-24-02-16-42-image.png)
-
-
 
 **get_success_url**
 
@@ -568,19 +550,13 @@ it doesn't have default value
 
 ---
 
-
-
 ### DeleteView
 
 ![](assets/2023-04-24-02-19-13-image.png)
 
-
-
 **template_name**
 
 ![](assets/2023-04-24-02-20-05-image.png)
-
-
 
 **pk_url_kwarg**
 
@@ -589,8 +565,6 @@ default = pk
 ![](assets/2023-04-24-02-21-16-image.png)
 
 ![](assets/2023-04-24-02-21-39-image.png)
-
-
 
 **context_object_name**
 
@@ -615,8 +589,6 @@ default = pk
 ![](assets/2023-04-24-02-26-28-image.png)
 
 ---
-
-
 
 ## RedirectView
 

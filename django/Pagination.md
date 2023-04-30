@@ -226,8 +226,26 @@ before
 </div>
 ```
 
-```
+# Final_code
 
+```html
+{% if is_paginated %}
+    {% if page_obj.has_previous %}
+        <a href="?page=1">처음</a></li>
+        <a href="?page={{ page_obj.previous_page_number }}">이전</a>
+    {% endif %}
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            {{ num }}
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">다음</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">마지막</a>
+    {% endif %}
+{% endif %}
 ```
 
 

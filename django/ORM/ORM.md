@@ -319,7 +319,18 @@ data = {model}.objects.filter(age__gt=25)
 data = {model}.objects.filter(age__in=[21,25,27])
 ```
 
+**__id=1**
+
+![](assets/2023-04-29-16-19-09-image.png)![](assets/2023-04-29-16-19-34-image.png)
+
+```python
+Review.objects.filter(author__id=1)
+Review.objects.filter(author__nickname="asdf")
+```
+
 이러한 조건 키워드를 조회와 함께 사용하면 복잡한 조회도 SQL없이 구현할 수 있습니다. 이 밖에도 몇가지 조건키워드가 더 있는데 여기서 모든 조건 키워드를 나열하지 않았습니다. '로직을 작성하다가 이런 조건 키워드가 있으면 좋겠는데' 하는 생각이 들때 공식 문서를 참고해서 찾아보세요. [QuerySet API reference | Django documentation | Django](https://docs.djangoproject.com/en/2.2/ref/models/querysets/#field-lookups)
+
+---
 
 ## 데이터 수정하기
 

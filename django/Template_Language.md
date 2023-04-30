@@ -161,6 +161,18 @@ variable이 "codeit" 일 때 {{ variable|ljust:"10" }} 이라면 "codeit "이 �
 
 복잡한 변수가 있을 때 '별명'을 붙이기 위해 사용합니다. with 구문 내에서는 value1을 value2 대신 사용할 수 있습니다.
 
+### **ljust**
+
+지정된 너비의 필드에서 값을 왼쪽 정렬합니다.
+
+**인수:** 필드 크기
+
+```html
+{% for i in ""|ljust:review.rating %}☆{% endfor %}
+```
+
+![](assets/2023-04-29-17-02-13-image.png)![](assets/2023-04-29-17-02-35-image.png)
+
 이 밖에도 몇 가지 템플릿 태그가 더 있는데, 필터와 마찬가지로 필요할 때 찾아서 사용하면 됩니다. 템플릿 태그에 대한 더 많은 정보는 아래 Django 공식 문서를 참고하세요. [Built-in template tags and filters | Django documentation | Django](https://docs.djangoproject.com/en/2.2/ref/templates/builtins/#ref-templates-builtins-tags)
 
 # 사용자 정의 필터와 태그
