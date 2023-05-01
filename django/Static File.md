@@ -38,3 +38,7 @@ urlpatterns = [ ... ]
 ```
 
 ![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-29-15-54-20-image.png)![](C:\Users\jin47\AppData\Roaming\marktext\images\2023-04-29-15-54-36-image.png)
+
+# Modeling with Media
+
+![](assets/2023-04-30-23-28-34-image.png)![](assets/2023-04-30-23-29-05-image.png)![](assets/2023-04-30-23-29-36-image.png)![](assets/2023-04-30-23-30-57-image.png)![](assets/2023-04-30-23-33-00-image.png)![](assets/2023-04-30-23-35-13-image.png)
