@@ -1,0 +1,134 @@
+이전 챕터에서 직렬화(Serialization)에 대해 소개했는데요. 직렬화는 파이썬 객체 형태의 데이터를 JSON으로 바꿔 주는 과정이라고 했었죠? DRF에서 해당 작업을 수행해 주는 도구가 바로 시리얼라이저(Serializer)입니다.
+
+영화 데이터 조회 요청(`GET`)을 처리하는 API를 직접 만들어 보면서 기본적인 사용법을 알아볼게요.
+
+# 시리얼라이저 생성
+
+먼저, `movies` 앱 안에 `serializers.py` 파일을 만들어 주세요. 거기에 영화에 대한 기본 정보를 담고 있는 `MovieSerializer`를 만들겠습니다.
+
+movies/serializers.py
+
+```python
+from rest_framework import serializers
+from .models import Movie
+
+class MovieSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    opening_date = serializers.DateField()
+    running_time = serializers.IntegerField()
+    overview = serializers.CharField()
+```
+
+자세히 살펴볼게요. 먼저, 시리얼라이저를 생성하기 위해선 `rest_framework.serializers`가 필요합니다.
+
+movies/serializers.py
+
+```python
+from rest_framework import serializers
+```
+
+다음으로, 생성할 `MovieSerializer`에 `Serializer` 클래스를 상속시키고(`class MovieSerializer(serializers.Serializer):`), `Movie` 모델에 존재하는 모든 필드를 정의해 줍니다. 참고로, 사용할 필드 이름은 꼭 **모델에서 사용하는 필드 이름과 일치**시켜야 합니다. 이 점 주의해 주세요.
+
+movies/serializers.py
+
+```python
+class MovieSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    opening_date = serializers.DateField()
+    running_time = serializers.IntegerField()
+    overview = serializers.CharField()
+```
+
+보시면 `id` 필드도 있는데요. `id`는 Django 모델이 자동으로 정의해 주는 필드죠? `GET` 요청을 보낼 때 함께 조회하고 싶어서 추가했습니다.
+
+# 모델과 뷰 연결
+
+다음으로 뷰를 작업해 줄게요. `MovieSerializer`로 직렬화 된 데이터가 반환되도록 처리해 보겠습니다.
+
+movies/views.py
+
+```python
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+from .models import Movie
+from .serializers import MovieSerializer
+
+@api_view(['GET'])
+def movie_list(request):
+    movies = Movie.objects.all()
+    serializer = MovieSerializer(movies, many=True)
+    return Response(serializer.data, status=200)
+```
+
+하나씩 살펴볼게요.
+
+먼저, `@api_view(['GET'])`으로 함수형 뷰인 `movie_list()`가 `GET` 메소드만 허용하는 API를 제공한다는 걸 표시합니다.
+
+```python
+@api_view(['GET'])
+def movie_list(request):
+    # ...
+```
+
+참고로 `@`로 시작하는 부분(`@api_view()`)은 데코레이터(decorator) 함수입니다. 이름 그대로 특정한 함수를 꾸미는 함수인데요. 기존 함수를 수정하지 않고 추가 로직을 넣고 싶을 때 사용합니다. 위의 코드에서는 `movie_list()`를 수정하지 않고 `api_view()`의 기능을 추가하기 위해 데코레이터 함수(`@api_view()`)가 사용됐습니다.
+
+다음으로, 모든 영화 객체를 가져와 `MovieSerializer`에 넣어 줍니다.
+
+```python
+movies = Movie.objects.all()
+serializer = MovieSerializer(movies, many=True)
+```
+
+파라미터로 `many`가 사용됐는데요. `Movie` 모델에서 받아온 데이터가 여러 영화 데이터들을 담고 있기 때문에 사용됐습니다. 이렇게 여러 데이터를 직렬화하는 것이라면 `many=True`를 써 줘야 합니다. 데이터를 하나만 직렬화 한다면 쓰지 않아도 됩니다.
+
+이렇게 `MovieSerializer`에 파이썬 객체 형태의 데이터인 `movies`를 넣어 주면 데이터가 파이썬 딕셔너리 형태로 바뀝니다. 변환된 데이터에는 `serializer.data`로 접근할 수 있는데요. 해당 결과를 `Response`에 넣어 줄게요.
+
+```python
+return Response(serializer.data, status=200)
+```
+
+`Response`는 `rest_framework`에서 제공하는 특별한 응답 클래스입니다. `MovieSerializer`를 통해 파이썬 딕셔너리로 변환된 데이터는 `Response`에서 최종적으로 JSON 형태로 바뀝니다.
+
+이 내용은 다음 챕터에서 좀 더 자세히 설명할게요. 일단은 `Response`가 DRF에서 응답을 반환할 때 중요한 역할을 한다는 것만 잘 기억해 주세요.
+
+# URL 설정하고 확인하기
+
+마지막으로, URL을 설정하겠습니다. 이때 URL은 프로젝트와 앱 디렉토리에 모두 추가해야 합니다.
+
+movie_api/urls.py
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('movies.urls')),
+]
+```
+
+movies/urls.py
+
+```python
+from django.urls import path
+from .views import movie_list
+
+urlpatterns = [
+    path('movies', movie_list),    
+]
+```
+
+이제 영화 정보 조회를 위한 API 생성이 끝났습니다. 서버를 실행시킨 후 `http://localhost:8000/movies`로 접속해 잘 동작하는지 확인해 볼게요.
+
+터미널
+
+```python
+> python manage.py runserver
+```
+
+![5-1](https://bakey-api.codeit.kr/api/files/resource?root=static&seqId=5828&directory=5-1.png&name=5-1.png)
+
+데이터가 JSON 형식으로 잘 조회되네요
