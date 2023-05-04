@@ -1,3 +1,5 @@
+﻿![1-1](https://bakey-api.codeit.kr/api/files/resource?root=static&seqId=5824&directory=1-1.png&name=1-1.png)
+
 # DRF(Django REST Framework)
 
 눈에 보이는 화면을 다루는 영역을 프론트엔드, 눈에 보이지 않는 데이터와 로직을 처리하는 영역을 백엔드라고 하는데요. Django는 프론트엔드와 백엔드를 모두 처리해 주는 풀스택 프레임워크였죠? 먼저 배워본 분들이라면 아실 텐데요(혹시 모르신다면 [관련 토픽](https://www.codeit.kr/topics/getting-started-with-django?pathType=CAREER&pathSlug=python-fullstack-developer)을 먼저 수강하시기 바랍니다).

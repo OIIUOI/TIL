@@ -1,4 +1,4 @@
-DRF(Django REST Framework)의 이름에 포함된 REST는 무엇을 의미할까요? 본격적인 학습에 앞서 간단하게 살펴보겠습니다.
+﻿DRF(Django REST Framework)의 이름에 포함된 REST는 무엇을 의미할까요? 본격적인 학습에 앞서 간단하게 살펴보겠습니다.
 
 # REST란?
 
@@ -13,13 +13,12 @@ API가 RESTful 하지 않더라도 데이터 통신은 가능합니다. 하지�
 ## HTTP 메소드
 
 HTTP 메소드는 프론트엔드와 백엔드의 통신에 사용되는 데이터 요청 방식입니다. 아래와 같은 것들이 있는데요.
-
-| HTTP 메소드 | 설명               |
-| -------- | ---------------- |
-| GET      | 데이터 조회를 위해 사용    |
-| POST     | 데이터 생성을 위해 사용    |
-| PATCH    | 특정 데이터 수정을 위해 사용 |
-| DELETE   | 특정 데이터 삭제를 위해 사용 |
+|HTTP 메소드|설명|
+|-|-|
+|GET|데이터 조회를 위해 사용|
+|POST|데이터 생성을 위해 사용|
+|PATCH|특정 데이터 수정을 위해 사용|
+|DELETE|특정 데이터 삭제를 위해 사용|
 
 RESTful한 API를 만들려면 각 HTTP 메소드를 목적에 맞게 사용해야 합니다.
 
@@ -39,32 +38,38 @@ RESTful하게 데이터를 통신하려면 URL 설계도 신경써야 합니다.
 
 먼저, URL에 행위(조회, 생성, 수정, 삭제 등)에 대한 정보를 포함시키면 안됩니다. 아래는 잘못 설계된 예시인데요.
 
-- `http://localhost:8000/movies/create`
+-   `http://localhost:8000/movies/create`
+
+  
 
 URL에 `create`라는 행위가 표현되었네요. REST 규칙을 위반한 것입니다. 위의 URL은 아래와 같이 수정돼야 합니다.
 
-- `http://localhost:8000/movies`
-- `create`라는 행위를 HTTP 메소드 중 `POST` 요청으로 표현
+-   `http://localhost:8000/movies`
+-   `create`라는 행위를 HTTP 메소드 중  `POST`  요청으로 표현
 
+  
 `POST`처럼 특정 행위를 표현할 수 있는 HTTP 메소드들은 다음과 같습니다.
-
-| HTTP 메소드 | 설명               | URL 예시      |
-| -------- | ---------------- | ----------- |
-| GET      | 데이터 조회를 위해 사용    | /movies     |
-| POST     | 데이터 생성을 위해 사용    | /movies     |
-| GET      | 특정 데이터 조회를 위해 사용 | /movies/:id |
-| PATCH    | 특정 데이터 수정을 위해 사용 | /movies/:id |
-| DELETE   | 특정 데이터 삭제를 위해 사용 | /movies/:id |
+|HTTP 메소드|설명|URL 예시|
+|-|-|-|
+|GET|데이터 조회를 위해 사용|/movies|
+|POST|데이터 생성을 위해 사용|/movies|
+|GET|특정 데이터 조회를 위해 사용|/movies/:id|
+|PATCH|특정 데이터 수정을 위해 사용|/movies/:id|
+|DELETE|특정 데이터 삭제를 위해 사용|/movies/:id|
 
 다음으로, URL의 마지막 부분에는 슬래시(`/`)를 사용하면 안됩니다. 슬래시는 URL에서 의미를 구분해 주는 역할을 하기 때문에, 마지막에 슬래시가 있는 것과 없는 것은 서로 다른 자원으로 구분됩니다.
 
-- 잘못 설계된 URL: `http://localhost:8000/movies/1/`
-- 잘 설계된 URL: `http://localhost:8000/movies/1`
+-   잘못 설계된 URL:  `http://localhost:8000/movies/1/`
+-   잘 설계된 URL:  `http://localhost:8000/movies/1`
+
+  
 
 마지막으로, URL에서 구분자를 사용하려면 언더바(`_`) 대신 하이픈(`-`)을 사용해야 합니다. 언더바는 문자로 인식되기 때문에 구분자의 역할을 하지 못합니다. 또, 대문자와 소문자는 아예 다른 글자로 인식되기 때문에 소문자로 작성해야 합니다.
 
-- 잘못 설계된 URL: `http://localhost:8000/popular_movies`
-- 잘못 설계된 URL: `http://localhost:8000/PopularMovies`
-- 잘 설계된 URL: `http://localhost:8000/popular-movies`
+-   잘못 설계된 URL:  `http://localhost:8000/popular_movies`
+-   잘못 설계된 URL:  `http://localhost:8000/PopularMovies`
+-   잘 설계된 URL:  `http://localhost:8000/popular-movies`
+
+  
 
 이번 레슨에서는 수많은 REST 규칙들 중 일부만 소개해 드렸는데요. 더 많은 규칙들이 알고 싶으면 [링크](https://aws.amazon.com/ko/what-is/restful-api/)를 참고해 주세요.
